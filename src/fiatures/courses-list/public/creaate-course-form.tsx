@@ -28,11 +28,10 @@ export function CreateCourseForm({
   className,
   revalidatePagePath,
 }: {
-  className?: string,
+  className?: string;
   revalidatePagePath: string;
 }) {
-
-  const [isCreateTransition, startCreateTransition] = useTransition()
+  const [isCreateTransition, startCreateTransition] = useTransition();
 
   const form = useForm<z.infer<typeof createCourseSchema>>({
     resolver: zodResolver(createCourseSchema),
@@ -52,11 +51,12 @@ export function CreateCourseForm({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit((data) => {
-        startCreateTransition(async () => {
-          await createCourseAction(data, revalidatePagePath)
-        })
-      })}
+      <form
+        onSubmit={form.handleSubmit((data) => {
+          startCreateTransition(async () => {
+            await createCourseAction(data, revalidatePagePath);
+          });
+        })}
         className={cn(className, "space-y-8")}
       >
         <FormField
@@ -87,7 +87,9 @@ export function CreateCourseForm({
           )}
         />
 
-        <Button type="submit" disabled={isCreateTransition}>Добавити</Button>
+        <Button type="submit" disabled={isCreateTransition}>
+          Добавити
+        </Button>
       </form>
     </Form>
   );

@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "build:vercel": "npx prisma generate && prisma db push && next build",
     "lint": "next lint",
     "prettier": "prettier -w ."
   },
