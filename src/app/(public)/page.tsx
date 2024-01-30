@@ -1,5 +1,5 @@
-import { CoursesList } from "@/fiatures/courses-list/public/courses-list";
-import { CreateCourseForm } from "@/fiatures/courses-list/public/creaate-course-form";
+import { CoursesList } from "@/features/courses-list/public/courses-list";
+import { CreateCourseForm } from "@/features/courses-list/public/creaate-course-form";
 
 export default async function Home() {
   return (
